@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>For Faryal ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--wine:#8f4359;--rose:#d1849a;--gold:#d8b878;--cream:#f7edf0;--ink:#fff5f7}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:#f8edf0;
+  font-family:Montserrat,Arial,sans-serif;
+  background:#2e1824;
+  background:linear-gradient(135deg,#24141e 0%,#451f2e 50%,#291522 100%);
+  touch-action:manipulation;
+}
+
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:0;
+  background-image:radial-gradient(rgba(255,255,255,.8) 1px,transparent 1px);background-size:12px 12px;
+}
+
+.decor{position:fixed;color:var(--gold);opacity:.4;z-index:0;font-size:32px;pointer-events:none}
+.d1{left:3%;top:4%}.d2{right:3%;top:6%;transform:rotate(180deg)}.d3{left:4%;bottom:5%}.d4{right:4%;bottom:4%;transform:rotate(180deg)}
+
+.home{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px 14px;position:relative;z-index:1}
+
+.mainCard{
+  width:min(760px,100%);text-align:center;padding:36px 18px 32px;
+  background:rgba(42, 18, 30, 0.75);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 15px 35px rgba(0,0,0,.4);
+  border-radius:24px;position:relative;overflow:hidden;
+}
+.mainCard:before{content:"";position:absolute;inset:8px;border:1px solid rgba(216,184,120,.4);pointer-events:none;border-radius:18px}
+
+.introNote{
+  background:rgba(216, 184, 120, 0.12);
+  border:1px solid rgba(216, 184, 120, 0.35);
+  border-radius:12px;
+  padding:12px 16px;
+  margin-bottom:20px;
+  font-family:"Bodoni Moda",Georgia,serif;
+  font-size:14px;
+  color:var(--gold);
+  line-height:1.5;
+}
+
+.crown{font-size:30px;color:var(--gold);margin-bottom:2px}
+.script{font-family:Parisienne,cursive;color:var(--rose);font-size:clamp(38px,7vw,64px)}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif}
+h1{font-size:clamp(26px,5.5vw,46px);font-weight:500;color:#fff;margin:0 0 10px}
+.subtitle{font-size:13px;line-height:1.6;max-width:540px;margin:auto;color:rgba(255,235,240,.85)}
+.ornament{margin:16px auto;color:var(--gold);font-size:16px}
+
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:620px;margin:24px auto 0}
+.menu button{
+  min-height:85px;
+  background:rgba(255, 255, 255, 0.08);
+  border:1px solid rgba(255,255,255,.15);
+  color:#fff4f7;cursor:pointer;padding:10px 6px;
+  border-radius:16px;
+  font-family:Montserrat,sans-serif;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.menu button:active{transform:scale(0.97);background:rgba(255,255,255,.18)}
+.menu .icon{display:block;font-size:26px;margin-bottom:4px}
+.menu b{font-size:11px;letter-spacing:.5px;font-weight:600}
+.bottom{font-size:10px;letter-spacing:1.2px;margin-top:22px;color:rgba(255,235,240,.65)}
+
+/* MODAL / POPUP */
+.modal{
+  position:fixed;inset:0;z-index:20;
+  background:rgba(10, 4, 8, 0.82);
+  display:none;align-items:center;justify-content:center;padding:12px;
+}
+.modal.show{display:flex}
+
+.popup{
+  width:min(720px,100%);max-height:86vh;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  background:#2a1420;
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
+  padding:28px 16px 20px;position:relative;
+  border-radius:22px;
+}
+.close{
+  position:absolute;right:10px;top:8px;border:0;background:none;
+  font-size:32px;color:#fff;cursor:pointer;width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+}
+.popTitle{text-align:center;color:#fff;font-size:24px;font-weight:500}
+.popScript{text-align:center;font-family:Parisienne;font-size:30px;color:var(--gold);margin-top:-2px}
+.rule{width:60px;height:1px;background:var(--gold);margin:12px auto 20px}
+
+/* LETTER */
+.letter{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  padding:20px 16px;font-family:"Bodoni Moda",Georgia,serif;
+  font-size:16px;line-height:1.75;color:#fff0f3;border-radius:14px;
+}
+.sign{font-family:Parisienne;font-size:28px;text-align:right;color:var(--rose);margin-top:10px}
+
+/* THINGS SHE LOVES CARDS */
+.loveDetails{display:grid;grid-template-columns:1fr;gap:10px}
+.loveCard{
+  display:grid;grid-template-columns:46px 1fr;gap:10px;align-items:start;
+  padding:14px;border-radius:14px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+}
+.loveIcon{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.1);font-size:22px;
+}
+.loveCard h3{color:#ffe7ed;font-size:17px;font-weight:500;margin-bottom:4px}
+.loveCard p{color:rgba(255,242,245,.85);font-size:12px;line-height:1.5}
+.loveCard span{display:block;margin-top:6px;color:#e7c98f;font-size:9px;letter-spacing:.4px;text-transform:uppercase}
+
+.loveQuote{
+  margin:18px auto 2px;padding:12px;text-align:center;color:#f0d39c;
+  font-family:"Bodoni Moda",Georgia,serif;font-size:14px;line-height:1.5;
+  border-top:1px solid rgba(216,184,120,.3);border-bottom:1px solid rgba(216,184,120,.3);
+}
+
+/* TRIPS & NOTES & DRESSES */
+.tripGrid{display:grid;grid-template-columns:1fr;gap:10px}
+.trip{
+  padding:14px;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);display:grid;grid-template-columns:40px 1fr;
+  gap:10px;align-items:center;border-radius:14px;
+}
+.trip .big{font-size:30px;text-align:center}.trip h3{font-size:16px;color:#ffe7ed}
+.trip p{font-size:12px;line-height:1.4;margin-top:2px;color:rgba(255,235,240,.8)}
+
+.station{display:grid;grid-template-columns:1fr;gap:10px}
+.note{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  padding:16px;border-radius:14px;
+}
+.note h3{font-size:17px;color:#ffe7ed;margin-bottom:4px}
+.note p{font-family:"Bodoni Moda",Georgia,serif;font-size:14px;line-height:1.5;color:rgba(255,242,245,.85)}
+
+.dresses{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.dress{text-align:center;padding:16px 6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px}
+.dress .big{font-size:34px}.dress h3{font-size:14px;color:#ffe7ed;margin-top:6px}
+
+/* WISH TEXTAREA */
+.wishText{
+  width:100%;height:120px;resize:none;margin-top:12px;padding:12px;
+  border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.2);outline:none;
+  border-radius:12px;font-family:"Bodoni Moda",Georgia,serif;font-size:15px;color:#fff0f3
+}
+.primary{
+  border:none;background:var(--rose);color:white;padding:12px 24px;
+  font-family:Montserrat;font-size:12px;font-weight:600;letter-spacing:.8px;
+  cursor:pointer;margin-top:16px;border-radius:20px;
+}
+.primary:active{background:var(--wine)}
+
+.popupNav{display:flex;justify-content:space-between;margin-top:18px}
+.navBtn{
+  border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);
+  color:#fff2f5;padding:10px 16px;cursor:pointer;font-family:Montserrat;font-size:11px;
+  border-radius:12px;
+}
+.navBtn:active{background:rgba(255,255,255,.18)}
+
+.toast{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(30px);
+  background:var(--rose);color:white;padding:10px 18px;z-index:50;opacity:0;transition:.3s;
+  font-size:12px;border-radius:20px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(min-width:600px){
+  .menu{grid-template-columns:repeat(3,1fr)}
+  .loveDetails,.tripGrid,.station{grid-template-columns:1fr 1fr}
+  .dresses{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="decor d1">❦</div><div class="decor d2">❧</div><div class="decor d3">❧</div><div class="decor d4">❦</div>
+
+<main class="home">
+ <div class="mainCard">
+  <div class="introNote">
+    Dear Faryal, be patient and click one by one. First click on <strong>MY LETTER</strong>, then go ahead ♡
+  </div>
+  <div class="crown">♔</div>
+  <div class="script">A little world</div>
+  <h1>made for Faryal</h1>
+  <div class="ornament">— ✦ —</div>
+  <p class="subtitle">The little things I would love to have with you — the places I would love to take you, the memories I would love to make, and the beautiful moments I would love to share with you.</p>
+
+  <div class="menu">
+   <button data-open="letter"><span class="icon">✉️</span><b>MY LETTER</b></button>
+   <button data-open="things"><span class="icon">🌹</span><b>THINGS YOU LOVE</b></button>
+   <button data-open="trips"><span class="icon">🗺️</span><b>OUR ADVENTURES</b></button>
+   <button data-open="stationery"><span class="icon">✒️</span><b>LOVE NOTES</b></button>
+   <button data-open="dresses"><span class="icon">👗</span><b>DRESSES</b></button>
+   <button data-open="wish"><span class="icon">✨</span><b>OUR FUTURE</b></button>
+  </div>
+  <div class="bottom">OPEN A LITTLE DREAM ♡</div>
+ </div>
+</main>
+
+<!-- LETTER -->
+<div class="modal" id="letter">
+ <div class="popup">
+  <button class="close" aria-label="Close">&times;</button>
+  <div class="popScript">from my heart</div><h2 class="popTitle">A Handwritten Letter</h2><div class="rule"></div>
+  <div class="letter">
+   My dearest Faryal,<br><br>
+   If I could put every beautiful feeling into words, I would fill pages and pages just for you.
+   I want our story to have quiet rainy evenings, long drives, flowers for no reason,
+   chocolates shared between smiles and little adventures that become our favourite memories.
+   <br><br>
+   I want handwritten letters we keep for years, photographs tucked between pages,
+   beautiful places we discover together and ordinary days that somehow feel extraordinary
+   simply because you are there.
+   <br><br>
+   Wherever the road takes us, I hope we always choose another page of our story.
+   <div class="sign">Yours, always ♡</div>
+  </div>
+  <div class="popupNav"><button class="navBtn" data-prev="none">BACK</button><button class="navBtn" data-next="things">NEXT →</button></div>
+ </div>
+</div>
+
+<!-- THINGS -->
+<div class="modal" id="things">
+ <div class="popup">
+  <button class="close" aria-label="Close">&times;</button>
+  <div class="popScript">the little things</div>
+  <h2 class="popTitle">Her Beautiful World</h2>
+  <div class="rule"></div>
+
+  <p style="text-align:center;color:rgba(255,242,245,.9);font-family:'Bodoni Moda';font-size:15px;line-height:1.5;margin-bottom:18px">
+   A little collection of the things Faryal loves —
+   and the feelings, moments and memories I would love to experience with Faryal.
+  </p>
+
+  <div class="loveDetails">
+   <article class="loveCard">
+    <div class="loveIcon">🚗</div>
+    <div>
+     <h3>Beautiful Cars</h3>
+     <p>I know for you, a beautiful car is more than four wheels. I would love to see your excitement when you see a gorgeous car, hear you talk about the details you love, and take you on unforgettable drives.</p>
+     <span>✦ Long drives · Dream cars</span>
+    </div>
+   </article>
+
+   <article class="loveCard">
+    <div class="loveIcon">🐎</div>
+    <div>
+     <h3>Horses</h3>
+     <p>I know you love the graceful beauty of horses. I would love to take you somewhere peaceful where you can see them up close and admire their freedom.</p>
+     <span>✦ Freedom · Grace · Wild beauty</span>
+    </div>
+   </article>
+
+   <article class="loveCard">
+    <div class="loveIcon">🍫</div>
+    <div>
+     <h3>Chocolates</h3>
+     <p>Surprising you with your favourite chocolates, adding a tiny handwritten note, and watching you smile when you realize I brought them just for you.</p>
+     <span>✦ Sweet surprises · Happy moments</span>
+    </div>
+   </article>
+
+   <article class="loveCard">
+    <div class="loveIcon">🌷</div>
+    <div>
+     <h3>Flowers</h3>
+     <p>Bringing you a beautiful bouquet without waiting for a special occasion, simply because you deserve beautiful things on ordinary days too.</p>
+     <span>✦ Roses · Bouquets · Pressed flowers</span>
+    </div>
+   </article>
+
+   <article class="loveCard">
+    <div class="loveIcon">🌧️</div>
+    <div>
+     <h3>Rain</h3>
+     <p>Sharing a rainy evening with you: rain against the window, warm lights, tea, and quiet conversation while the world outside feels slower.</p>
+     <span>✦ Rainy windows · Cozy evenings</span>
+    </div>
+   </article>
+
+   <article class="loveCard">
+    <div class="loveIcon">🧸</div>
+    <div>
+     <h3>Squishies</h3>
+     <p>Choosing the cutest ones that match your personality, and surprising you with them just to see that happy little smile.</p>
+     <span>✦ Cute · Soft · Comforting</span>
+    </div>
+   </article>
+  </div>
+
+  <div class="loveQuote">
+   “The sweetest part is not the thing itself — it is the memory I get to make with you around it.”
+  </div>
+
+  <div class="popupNav">
+   <button class="navBtn" data-prev="letter">← BACK</button>
+   <button class="navBtn" data-next="trips">NEXT →</button>
+  </div>
+ </div>
+</div>
+
+<!-- TRIPS -->
+<div class="modal" id="trips">
+ <div class="popup">
+  <button class="close" aria-label="Close">&times;</button>
+  <div class="popScript">somewhere with you</div><h2 class="popTitle">Adventures We Should Have</h2><div class="rule"></div>
+  <div class="tripGrid">
+   <div class="trip"><div class="big">🏔️</div><div><h3>Mountain Escape</h3><p>Cold air, warm tea and a cabin under the stars.</p></div></div>
+   <div class="trip"><div class="big">🚗</div><div><h3>Road Trip</h3><p>No perfect plan. Just music and open roads.</p></div></div>
+   <div class="trip"><div class="big">🌊</div><div><h3>By The Sea</h3><p>A sunset walk beside the water.</p></div></div>
+   <div class="trip"><div class="big">🌲</div><div><h3>Hidden Place</h3><p>Finding a tiny corner of the world for us.</p></div></div>
+  </div>
+  <div class="popupNav"><button class="navBtn" data-prev="things">← BACK</button><button class="navBtn" data-next="stationery">NEXT →</button></div>
+ </div>
+</div>
+
+<!-- STATIONERY -->
+<div class="modal" id="stationery">
+ <div class="popup">
+  <button class="close" aria-label="Close">&times;</button>
+  <div class="popScript">little pieces of us</div><h2 class="popTitle">Beautiful Stationery</h2><div class="rule"></div>
+  <div class="station">
+   <div class="note"><h3>✒ Old-Fashioned Letters</h3><p>Folded paper, a fountain pen and words that take time to write.</p></div>
+   <div class="note"><h3>❦ Memory Pages</h3><p>Tickets, photographs, pressed flowers and tiny notes.</p></div>
+   <div class="note"><h3>✉ Secret Notes</h3><p>Little messages hidden where you least expect them.</p></div>
+  </div>
+  <div class="popupNav"><button class="navBtn" data-prev="trips">← BACK</button><button class="navBtn" data-next="dresses">NEXT →</button></div>
+ </div>
+</div>
+
+<!-- DRESSES -->
+<div class="modal" id="dresses">
+ <div class="popup">
+  <button class="close" aria-label="Close">&times;</button>
+  <div class="popScript">every style suits you</div><h2 class="popTitle">Beautiful Dresses</h2><div class="rule"></div>
+  <div class="dresses">
+   <div class="dress"><div class="big">👗</div><h3>Elegant Evening</h3></div>
+   <div class="dress"><div class="big">🥻</div><h3>Classic Grace</h3></div>
+   <div class="dress"><div class="big">👗</div><h3>Soft & Romantic</h3></div>
+   <div class="dress"><div class="big">✨</div><h3>Royal Night</h3></div>
+  </div>
+  <div style="text-align:center;margin-top:20px;font-family:Parisienne;font-size:24px;color:var(--rose)">Beautiful in every version of you ♡</div>
+  <div class="popupNav"><button class="navBtn" data-prev="stationery">← BACK</button><button class="navBtn" data-next="wish">NEXT →</button></div>
+ </div>
+</div>
+
+<!-- WISH -->
+<div class="modal" id="wish">
+ <div class="popup">
+  <button class="close" aria-label="Close">&times;</button>
+  <div class="popScript">one day</div><h2 class="popTitle">Our Future</h2><div class="rule"></div>
+  <p style="text-align:center;font-family:'Bodoni Moda';font-size:15px;line-height:1.5">
+   Write a little dream for us. A place you want to visit, a memory you want to make, or simply something you hope our story always keeps.
+  </p>
+  <textarea class="wishText" id="wishText" placeholder="Dear future us..."></textarea>
+  <div style="text-align:center"><button class="primary" id="save">KEEP THIS WISH ♡</button></div>
+  <div class="popupNav"><button class="navBtn" data-prev="dresses">← BACK</button><button class="navBtn" data-next="none">CLOSE</button></div>
+ </div>
+</div>
+
+<div class="toast" id="toast">Your little wish is safe here. ♡</div>
+
+<script>
+let musicStarted = false;
+let audioCtx;
+
+function startMusic() {
+  if (musicStarted) return;
+  musicStarted = true;
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioCtx = new AudioContext();
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    const notes = [261.63, 329.63, 392, 329.63, 293.66, 349.23, 440, 349.23];
+    let i = 0;
+    function play() {
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      o.type = "sine";
+      o.frequency.value = notes[i++ % notes.length];
+      g.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.02, audioCtx.currentTime + 0.05);
+      g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.9);
+      o.connect(g).connect(audioCtx.destination);
+      
+      o.onended = () => {
+        o.disconnect();
+        g.disconnect();
+      };
+      
+      o.start();
+      o.stop(audioCtx.currentTime + 0.95);
+      setTimeout(play, 1200);
+    }
+    play();
+  } catch(e){}
+}
+
+function openModal(id) {
+  document.querySelectorAll(".modal").forEach(m => m.classList.remove("show"));
+  if (id && id !== "none") {
+    const targetModal = document.getElementById(id);
+    if (targetModal) {
+      targetModal.classList.add("show");
+      const popup = targetModal.querySelector(".popup");
+      if (popup) popup.scrollTop = 0;
+    }
+    startMusic();
+  }
+}
+
+document.querySelectorAll("[data-open]").forEach(b => {
+  b.onclick = () => openModal(b.dataset.open);
+});
+document.querySelectorAll(".close").forEach(b => {
+  b.onclick = () => openModal("none");
+});
+document.querySelectorAll("[data-next]").forEach(b => {
+  b.onclick = () => openModal(b.dataset.next);
+});
+document.querySelectorAll("[data-prev]").forEach(b => {
+  b.onclick = () => openModal(b.dataset.prev);
+});
+document.querySelectorAll(".modal").forEach(m => {
+  m.onclick = e => { if (e.target === m) openModal("none"); };
+});
+
+const wishText = document.getElementById("wishText");
+if (localStorage.getItem("faryalWish")) {
+  wishText.value = localStorage.getItem("faryalWish");
+}
+
+document.getElementById("save").onclick = () => {
+  localStorage.setItem("faryalWish", wishText.value);
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2500);
+};
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") openModal("none");
+});
+</script>
+</body>
+</html>
